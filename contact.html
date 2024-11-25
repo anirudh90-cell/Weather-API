@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="container">
+    <div id="con">
+    <h1>&#9743; CONTACT US</h1>
+    </div>
+    <div id="add">
+        <p id="address"><h3>Address</h3></p><br>
+        xyz road,Indore(M.P),India
+        <hr>
+        <div id="num">
+        <p><h3>Contact Number</h3></p><br>
+        Developers contact no:-  <a href="tel:"9826131008">9826131008</a>,<br>
+         <a href="tel:7987635181">7987635181</a>, <a href="tel:7987635181">9586471258</a><br><hr>
+        </div>
+        <div id="gma">
+        <p><h3>Gmail</h3></p><br>
+        <a href="mailto:xyzcompany@gmail.com">xyzcompany@gmail.com</a><br>
+        <a href="mailto:abcramesh@gmail.com">abcramesh@gmail.com</a><br><hr>
+       <br>
+       <div id="query">
+        <h1>Feedback & any query</h1>
+        <br>
+       <form class="f1" id="myQuery" method="post">
+        <fieldset>
+            <div class="d1">
+        <label class="q1">Full Name:- </label>
+        <input type="text" id="name" name="Name" placeholder="Name...">
+        </div>
+        <div class="d1">
+        <label class="q1">E-mail:- </label>
+        <input type="text" id="name" name="Email" placeholder="abcd1234@gmail.com">
+        </div>
+        <div class="d1">
+            <label class="q1">Mobile:- </label>
+            <input type="numeric" id="name" name="Mobile" placeholder="98936 *****">
+            </div>
+        <div class="d1">
+        <label class="q2">Feedback & query</label>
+        <textarea type="textarea" id="textarea" name="feedback" placeholder="Types something here......"></textarea>
+        </div>
+        <button class="b1" onclick="SubQuery(event)">Send</button>
+        
+        </fieldset>
+    </form>
+    </div>
+    </div>
+    </div>
+    </div>
+</body>
+<script
+		src="https://code.jquery.com/jquery-3.4.1.js"
+		integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+		crossorigin="anonymous"></script>
+<script>
+    function SubQuery(event){
+    event.preventDefault();
+    $.ajax({
+        url:'https://api.apispreadsheets.com/data/tYz3WJLY6fQqHrI9/',
+        type:'post',
+        data:$("#myQuery").serializeArray(),
+        success: function(){
+            document.querySelector("#myQuery").reset();
+          alert("Message has been sent, Thanks :)")
+        },
+        error: function(){
+          alert("There was an error :(")
+        }
+    });
+}
+</script>
+</html>
