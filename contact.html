@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="css.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
@@ -55,26 +55,7 @@
     </div>
     </div>
     </div>
+	<script src="script.js"></script>
 </body>
-<script
-		src="https://code.jquery.com/jquery-3.4.1.js"
-		integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-		crossorigin="anonymous"></script>
-<script>
-    function SubQuery(event){
-    event.preventDefault();
-    $.ajax({
-        url:'https://api.apispreadsheets.com/data/tYz3WJLY6fQqHrI9/',
-        type:'post',
-        data:$("#myQuery").serializeArray(),
-        success: function(){
-            document.querySelector("#myQuery").reset();
-          alert("Message has been sent, Thanks :)")
-        },
-        error: function(){
-          alert("There was an error :(")
-        }
-    });
-}
-</script>
+
 </html>
