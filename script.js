@@ -390,3 +390,19 @@ if(emailPattern.test(emailValue)){
     }
 });
 
+
+    function SubQuery(event){
+    event.preventDefault();
+    $.ajax({
+        url:'https://api.apispreadsheets.com/data/tYz3WJLY6fQqHrI9/',
+        type:'post',
+        data:$("#myQuery").serializeArray(),
+        success: function(){
+            document.querySelector("#myQuery").reset();
+          alert("Message has been sent, Thanks :)")
+        },
+        error: function(){
+          alert("There was an error :(")
+        }
+    });
+}
